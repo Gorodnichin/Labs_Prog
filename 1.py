@@ -49,4 +49,35 @@ f4=True
 while(f4):
     try:
         w2=int(input("Введите число от 0 до 30:"))
-        if 0<=w2<=30 and w2<w1
+        if 0<=w2<=30 and w2<w1:
+            f4 = False
+        else:
+            print("Конечная влажность должна быть от 0 до 30 и меньше начальной (w2 < w1)")
+    except ValueError:
+        print("Неверно выбрано число")
+print("Введите температуру сушильного агента t:")
+f5 = True
+while f5:
+    try:
+        T = float(input("Введите число от 40 до 250: "))
+        if 40 <= T <= 250:
+            f5 = False
+        else:
+            print("Температура должна быть в диапазоне от 40 до 250")
+    except ValueError:
+        print("Неверно выбрано число")
+m_w = m * (w1 - w2) / (100 - w2)
+if w2 == 0:
+    t = float('inf')
+else:
+    t = (1 / k) * math.log(w1 / w2)
+if t < 2:
+    drying_class = "быстрая сушка"
+elif 2 <= t <= 12:
+    drying_class = "нормальная"
+else:
+    drying_class = "длительная"
+print("Материал:", material)
+print("Масса удаляемой воды (кг):", m_w)
+print("Время сушки (ч):", t)
+print("Класс сушки:", drying_class)
