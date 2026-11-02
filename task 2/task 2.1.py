@@ -1,10 +1,10 @@
 f_input = True
 s = ''
-while f_input:
+while f:
     try:
         s = input('Введите строку: ') 
         if len(s.strip()) > 0:
-            f_input = False
+            f = False
         else:
             print("Строка не должна быть пустой. Пожалуйста, введите текст.")     
     except ValueError:
