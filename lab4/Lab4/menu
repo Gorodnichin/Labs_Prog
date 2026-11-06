@@ -1,0 +1,32 @@
+from __future__ import annotations
+from constants import mat_1, mat_2, mat_3
+def show_menu() -> None:
+    print("\n Выберите материал:")
+    print("  1 — Древесина (k = 0.008)")
+    print("  2 — Керамика (k = 0.004)")
+    print("  3 — Зерно (k = 0.012)")
+    print("  0 — выход")
+def select_mode() -> float | None:
+    while True:
+        choice = input("Введите номер материала (от 0 до 3): ").strip()
+        match choice:
+            case "1":
+                return mat_1
+            case "2":
+                return mat_2
+            case "3":
+                return mat_3
+            case "0":
+                return None
+            case _:
+                print("Ошибка: неверный пункт меню. Повторите ввод.")
+def mode_name(k: float) -> str:
+    match k:
+        case 0.008:
+            return "Древесина"
+        case 0.004:
+            return "Керамика"
+        case 0.012:
+            return "Зерно"
+        case _:
+            return "неизвестный"

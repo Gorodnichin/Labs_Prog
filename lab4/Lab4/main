@@ -1,0 +1,23 @@
+
+from validation import input_mass, input_moisture1, input_moisture2, input_Temperature
+from menu import show_menu, select_mode, mode_name
+from operations import m_w, t
+def water_mass() -> None:
+    print("=== Рассчет массы удаляемой воды ===")
+
+    while True:
+        show_menu()
+        k = select_mode()
+        if k is None:
+            print("Работа завершена.")
+            break
+        d = input_mass()
+        n = input_moisture1()
+        v = input_moisture2()
+        m_w = ()
+        print("\n Результаты ")
+        print(f"Материал:        {mode_name(k)} (k = {k})")
+        print(f"Масса удаленой воды: {m_w} кг")
+        print("\n")
+if __name__ == "__main__":
+    water_mass()

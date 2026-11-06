@@ -1,0 +1,15 @@
+import math
+mat_1: float = 0.008
+mat_2: float = 0.004
+mat_3: float = 0.012
+m_min: float = 1
+m_max: float = 5000
+w1_min: float = 5 
+w1_max: float = 60
+w2_min: float = 0
+w2_max: float = 30
+T_min: float = 40
+T_max: float = 250
+t_small_limit: float = 2
+t_large_limit: float = 12
+LOG_FILE: str = "input_errors.log"

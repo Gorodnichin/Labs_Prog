@@ -1,0 +1,17 @@
+import math
+from typing import Annotated
+from constants import m, w1, w2, mat_1, mat_2, mat_3
+def m_w(
+       m: Annotated[float, "Масса воды, кг"],
+       w1: Annotated[float, "Начальная влажность, %"],
+       w2: Annotated[float, "Конечная влажность, %"],
+) -> float:
+    return m * (w1 - w2) / (100 - w2)
+def t(
+        w1: Annotated[float, "Начальная влажность, %"],
+        w2: Annotated[float, "Конечная влажность, %"],
+        mat_1: Annotated[float, "Древесина"],
+        mat_2: Annotated[float, "Керамика"],
+        mat_3: Annotated[float, "Зерно"],
+) -> float:
+    return (1 / (mat_1 or mat_2 or mat_3)) * math.log(w1 / w2)
